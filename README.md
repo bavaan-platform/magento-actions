@@ -561,7 +561,7 @@ services:
       - 9200:9200
     options: -e="discovery.type=single-node" --health-cmd="curl http://localhost:9200/_cluster/health" --health-interval=10s --health-timeout=5s --health-retries=10
   #opensearch:
-  #   image: ghcr.io/mad-i-t/magento-opensearch:2.5.0
+  #   image: ghcr.io/bavaan-platform/magento-opensearch:2.5.0
   #   ports:
   #     - 9200:9200
   #   options: -e="discovery.type=single-node" -e "plugins.security.disabled=true" --health-cmd="curl http://localhost:9200/_cluster/health" --health-interval=10s --health-timeout=5s --health-retries=10
