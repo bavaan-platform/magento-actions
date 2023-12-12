@@ -50,10 +50,10 @@ then
     if [ -z "$INPUT_LANGS"  ] && [ -z "$INPUT_THEMES"  ]
     then
       ## the switch to production will build static content for all languages declared in config.php
-      bin/magento deploy:mode:set production
+      php -d memory_limit=-1 bin/magento deploy:mode:set production
     else
-      bin/magento setup:di:compile
-      bin/magento deploy:mode:set --skip-compilation production
+      php -d memory_limit=-1 bin/magento setup:di:compile
+      php -d memory_limit=-1 bin/magento deploy:mode:set --skip-compilation production
       # deploy static build for different locales
       export IFS=","
       magento_themes=${INPUT_THEMES:+${INPUT_THEMES//,/' '}""}
